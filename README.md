@@ -5,6 +5,8 @@ Used to check the header information in a wav file.
 Clone repository, then simply run:
 `python main.py myfile.wav`, replacing `myfile.wav` with the name of your wav file.
 
+For colorful output, install colorama `pip instal colorama`
+
 ## Example
 Input:
 ```

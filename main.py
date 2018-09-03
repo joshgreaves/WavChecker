@@ -6,10 +6,16 @@ try:
     SUCCESS = Fore.GREEN + "Success" + Style.RESET_ALL
     FAILURE = Fore.RED + "Failure" + Style.RESET_ALL
     WARNING = Fore.YELLOW + "Warning" + Style.RESET_ALL
+    GREEN = Fore.GREEN
+    RED = Fore.RED
+    RESET = Style.RESET_ALL
 except ImportError:
-    SUCCESS = ""
-    FAILURE = ""
-    WARNING = ""
+    SUCCESS = "Success"
+    FAILURE = "Failure"
+    WARNING = "Warning"
+    GREEN = ""
+    RED = ""
+    RESET = ""
 
 CHECK1 = "Check 1,  ChunkID == RIFF:      "
 CHECK2 = "Check 2,  ChunkSize:            "
@@ -157,10 +163,10 @@ def check(data):
     # Print results
     print("\nResult: ", end="")
     if num_successes == num_checks:
-        print(Fore.GREEN, end="")
+        print(GREEN, end="")
     else:
-        print(Fore.RED, end="")
-    print(("%d/%d" % (num_successes, num_checks)) + Style.RESET_ALL)
+        print(RED, end="")
+    print(("%d/%d" % (num_successes, num_checks)) + RESET)
     print("wav format:     \t" +
           (WAVE_FORMATS[audio_format] if audio_format in WAVE_FORMATS else "0x{:04x} Unknown".format(audio_format)))
     print("num channels:   \t%d" % num_channels)
